@@ -24,7 +24,7 @@ npm install
 ### Running the API
 
 ```bash
-npm start
+npm run dev
 ```
 
 ## API Endpoints

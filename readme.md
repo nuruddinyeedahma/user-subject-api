@@ -7,6 +7,7 @@ A RESTful API for managing user subjects.
 - CRUD operations for user subjects
 - JWT authentication
 - Input validation
+- User Login
 
 ## Getting Started
 

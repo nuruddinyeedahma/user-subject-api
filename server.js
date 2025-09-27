@@ -4,12 +4,14 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
+const cors = require('cors'); 
 
 const Register = require('./models/Register');
 const Subject = require('./models/Subject');
 
 const app = express();
 app.use(express.json());
+app.use(cors()); 
 
 const PORT = process.env.PORT || 3000;
 
@@ -275,4 +277,3 @@ app.use((req, res) => {
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
-

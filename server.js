@@ -268,6 +268,19 @@ app.delete('/api/subjects/:id', authMiddleware, async (req, res) => {
   }
 });
 
+/**
+ * ใช้ในการ ดึงรายการ subjects หน้า Home
+ */
+app.get('/api/home/subjects', async (req, res) => {
+  try {
+    const subjects = await Subject.find().select('-__v');
+    res.json(subjects);
+  } catch (err) {
+    console.error('login error', err);
+    res.status(500).json({ message: 'Server error' });
+  }
+});
+
 // ตัวจับ error 404 (ถ้า route ไม่ถูก)
 app.use((req, res) => {
   res.status(404).json({ message: 'Not found' });
